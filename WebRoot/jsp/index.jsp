@@ -14,10 +14,10 @@
 <body>
 	<div class="mianCont">
 		<div class="top">
-			<span>您好！欢迎来到17商城 请&nbsp;<a href="login.html">[登录]</a>&nbsp;<a
-				href="reg.html">[注册]</a></span> <span class="topRight"> <a
-				href="vip.html">我的17</a>&nbsp;| <a href="order.html">我的订单</a>&nbsp;|
-				<a href="login.html">会员中心</a>&nbsp;| <a href="contact.html">联系我们</a>
+			<span>您好！欢迎来到17商城 请&nbsp;<a href="jsp/login.html">[登录]</a>&nbsp;<a
+				href="jsp/reg.html">[注册]</a></span> <span class="topRight"> <a
+				href="jsp/vip.html">我的17</a>&nbsp;| <a href="jsp/order.html">我的订单</a>&nbsp;|
+				<a href="jsp/login.html">会员中心</a>&nbsp;| <a href="jsp/contact.html">联系我们</a>
 			</span>
 		</div>
 		<!--top/-->
@@ -63,7 +63,7 @@
 				<h2 class="Title">所有商品分类</h2>
 				<ul class="InPorNav">
 				<c:forEach  var="item" items="${dli}" > 
-        			<li><a href="product.html">${item.cname }</a>
+        			<li><a href="jsp/product.html">${item.cname }</a>
 						<div class="chilInPorNav">
 							<c:forEach  var="dditem" items="${item.directory2}" > 
 								<a href="#">${dditem.cname }</a>
@@ -78,9 +78,9 @@
 			<div class="pntRight">
 				<ul class="nav">
 					<li class="navCur"><a href="index.html">商城首页</a></li>
-					<li><a href="product.html">促销中心</a></li>
-					<li><a href="login.html">会员中心</a></li>
-					<li><a href="help.html">帮助中心</a></li>
+					<li><a href="jsp/product.html">促销中心</a></li>
+					<li><a href="jsp/login.html">会员中心</a></li>
+					<li><a href="jsp/help.html">帮助中心</a></li>
 					<div class="clears"></div>
 					<div class="phone">TEL：021-12345678</div>
 				</ul>
