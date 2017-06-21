@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Directory" table="directory">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="did" column="did" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="cname" column="cname"   type="string" />
+		<property name="cts" column="cts"   type="integer" />
+		<property name="status" column="status"   type="integer" />
+		<property name="orderby" column="orderby"   type="integer" />
+	 	<set name="directory2"  lazy="true" inverse="true" cascade="save-update,delete" fetch="join">
+			<cache usage="read-write" /> <!-- 缓存 -->
+			<key column="did" />
+			<one-to-many class="Directory2" />
+		</set>
+	</class>
+</hibernate-mapping>
