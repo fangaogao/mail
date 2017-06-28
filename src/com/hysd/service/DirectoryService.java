@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.hysd.domain.Directory;
 
-public interface DirectoryService {
+public interface DirectoryService{
 
 	 
 

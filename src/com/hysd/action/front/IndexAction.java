@@ -1,4 +1,4 @@
-package com.hysd.action;
+package com.hysd.action.front;
 
 import java.util.List;
 
