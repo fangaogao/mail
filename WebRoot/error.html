@@ -20,9 +20,9 @@ var ts=10;
 var seti=setInterval(function(){
 	ts--;
 	document.getElementById("ts").innerHTML=ts;
-	if(ts<0){
+	if(ts<1){
 		clearInterval(seti);
-		window.location="index_index.do";
+		//window.location="index_index.do";
 	}
 }, 1000);
 </script>

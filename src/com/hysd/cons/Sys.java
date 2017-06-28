@@ -9,5 +9,21 @@ public class Sys {
 		public static Integer IS_USE=1;
 		/*0,禁用*/
 		public static Integer UN_USE=0;
+		
+		/*0默认一页几条数据*/
+		public static Integer PGGESIZE=10;
+	}
+	
+	public static class CmgLog{
+		/*日志操作类型：0,创建*/
+		public static Integer CREATE=0;
+		/*日志操作类型：1,修改*/
+		public static Integer UPDATE=1;
+		/*日志操作类型：2,删除*/
+		public static Integer DEL=2;
+		/*日志操作类型：3,登陆*/
+		public static Integer LOGIN=3; 
+		/*日志操作类型：4,其他*/
+		public static Integer OTHER=4; 
 	}
 }

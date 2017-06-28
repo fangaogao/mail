@@ -16,7 +16,7 @@
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
   <h2><span class="icon-user"></span>系统管理</h2>
 	  <ul style="display:block">
-	    <li><a href="role_list.html" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
+	    <li><a href="role_list.do" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
 	    <li><a href="menu_list.html" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
 	    <li><a href="role_menu.html" target="right"><span class="icon-caret-right"></span>权限分配</a></li>  
 	    <li><a href="merchant_list.html" target="right"><span class="icon-caret-right"></span>客服管理</a></li>   

@@ -2,15 +2,19 @@ package com.hysd.action.admin;
 
  
 
+import java.util.Date;
+
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+ 
 
 import org.springframework.stereotype.Controller;
 
 import com.hysd.cons.Sys;
+import com.hysd.domain.CmgLog;
 import com.hysd.domain.Merchant;
+import com.hysd.service.CmgLogService;
 import com.hysd.service.MerchantService;
+import com.hysd.util.DateUtils;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -22,6 +26,9 @@ public class LoginAction extends ActionSupport{
 	 
 	@Resource
 	private MerchantService merchantService;
+	
+	@Resource
+	private CmgLogService cmgLogService;
 
 	private Merchant merchant;
 	 
@@ -40,6 +47,13 @@ public class LoginAction extends ActionSupport{
 			if(mer.getStatus()==Sys.Common.IS_USE){
 				//登录信息放入session中
 				ActionContext.getContext().getSession().put("admin", mer);
+				
+				//添加日志信息
+				CmgLog cl=new CmgLog();
+				cl.setCmts(DateUtils.DateTimeToString(new Date()));
+				cl.setType(Sys.CmgLog.LOGIN);
+				cl.setContent(mer.getName()+" 登录系统");
+				cmgLogService.save(cl);
 				return "loginin"; 
 			}else{
 				ActionContext.getContext().put("msg", "此账号被禁用");

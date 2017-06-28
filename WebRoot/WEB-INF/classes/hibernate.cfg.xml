@@ -46,6 +46,8 @@
 		<mapping resource="com/hysd/domain/Directory.hbm.xml" />
 		<mapping resource="com/hysd/domain/Directory2.hbm.xml" />
 		<mapping resource="com/hysd/domain/Merchant.hbm.xml" />
+		<mapping resource="com/hysd/domain/CmgLog.hbm.xml" />
+		<mapping resource="com/hysd/domain/Role.hbm.xml" />
 		 
 		
 		

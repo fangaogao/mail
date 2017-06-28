@@ -3,7 +3,7 @@ package com.hysd.domain;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Directory {
+public class Directory {//一级目录
 	private Integer did;
 	private String cname;//	目录名称
 	private Integer cts;//	创建时间戳

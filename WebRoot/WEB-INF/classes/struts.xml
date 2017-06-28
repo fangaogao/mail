@@ -29,13 +29,12 @@
 	
 		<default-action-ref name="index_index" />
 		
-		<global-results>
+		<!--<global-results>
 			<result name="exceptionPage">/error.html</result>
-		</global-results>
-		
+		</global-results> 
 		<global-exception-mappings>
 			<exception-mapping result="exceptionPage" exception="java.lang.Exception" />
-		</global-exception-mappings>
+		</global-exception-mappings> -->
 		
 		 
 		<!-- jsp前台 -->
@@ -49,9 +48,14 @@
 		<action name="login_*"  method="{1}" class="com.hysd.action.admin.LoginAction">
 			<result name="login">/admin/login.jsp</result>
 			<result name="loginin">/admin/index.jsp</result>
-			<result name="error">/login.jsp</result>
 		</action>
 
+		<action name="role_*"  method="{1}" class="com.hysd.action.admin.RoleAction">
+			<result name="list">/admin/role_list.jsp</result>
+			<result name="add">/admin/role_add.jsp</result>
+			<result name="update">/admin/role_update.jsp</result>
+			 
+		</action>
 		
 	</package>
 

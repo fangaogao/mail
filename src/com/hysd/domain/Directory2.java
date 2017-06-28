@@ -1,6 +1,6 @@
 package com.hysd.domain;
 
-public class Directory2 {
+public class Directory2 {//二级目录
 	private Integer ddid;
 	private String cname;//	目录名称
 	private Integer cts;//	创建时间戳

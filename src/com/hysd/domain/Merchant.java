@@ -1,6 +1,6 @@
 package com.hysd.domain;
 
-public class Merchant {
+public class Merchant {//后台客服
 	private Integer mid	;
 	private String mobile	;//登陆账号，手机号
 	private String pwd	;//密码

@@ -11,7 +11,7 @@
 		<property name="pwd" column="pwd"   type="string" />
 		<property name="name" column="name"   type="string" />
 		<property name="status" column="status"   type="integer" />
-		<property name="upImgs" column="upImgs"   type="string" />
+		<property name="faceimg" column="faceimg"   type="string" />
 	 	 
 	</class>
 </hibernate-mapping>
