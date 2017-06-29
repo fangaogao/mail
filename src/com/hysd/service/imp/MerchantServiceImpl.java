@@ -25,6 +25,11 @@ public class MerchantServiceImpl implements MerchantService {
 		return mer;
 	}
 
+	@Override
+	public void saveOrUpdate(Merchant m) {
+		baseDAO.saveOrUpdate(m);
+	}
+
 	  
 	 
 }

@@ -9,6 +9,10 @@
 		</id>
 		<property name="rname" column="rname"   type="string" />
 		<property name="cts" column="cts"   type="string" />
-		 
+		<set name="merchant"  lazy="true" inverse="true" cascade="save-update,delete" fetch="join">
+			<cache usage="read-write" /> <!-- 缓存 -->
+			<key column="rid" />
+			<one-to-many class="Merchant" />
+		</set> 
 	</class>
 </hibernate-mapping>

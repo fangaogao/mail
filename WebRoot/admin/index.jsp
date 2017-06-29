@@ -8,7 +8,8 @@
 <body style="background-color:#f2f9fd;">
 <div class="header bg-main">
   <div class="logo margin-big-left fadein-top">
-    <h1><img src="${ctx}/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+    <h1><img src="<c:if test="${not empty admin.faceimg }">${imgctx}${admin.faceimg }</c:if>
+    		<c:if test="${empty admin.faceimg }">${ctx}/images/y.jpg</c:if>" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
   </div>
   <div class="head-l"><a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
@@ -50,8 +51,8 @@
   
   <h2><span class="icon-pencil-square-o"></span>个人中心</h2>
   <ul>
-    <li><a href="" target="right"><span class="icon-caret-right"></span>基本信息</a></li>
-    <li><a href="" target="right"><span class="icon-caret-right"></span>修改密码</a></li>        
+    <li><a href="merchant_info.do" target="right"><span class="icon-caret-right"></span>基本信息</a></li>
+    <li><a href="my_pwd" target="right"><span class="icon-caret-right"></span>修改密码</a></li>        
   </ul> 
 </div>
 

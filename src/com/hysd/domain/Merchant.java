@@ -1,5 +1,9 @@
 package com.hysd.domain;
 
+import org.junit.Ignore;
+
+import net.sf.ehcache.pool.sizeof.annotations.IgnoreSizeOf;
+
 public class Merchant {//后台客服
 	private Integer mid	;
 	private String mobile	;//登陆账号，手机号
@@ -7,7 +11,11 @@ public class Merchant {//后台客服
 	private String name;	//真实名字
 	private Integer status;	//1启用，0禁用
 	private String faceimg;//	头像
-
+	private String cts;//创建时间
+	private Role role;
+	
+	@IgnoreSizeOf
+	private String rname;//角色名称，数据库将忽略此字段
 	 
 	public Integer getMid() {
 		return mid;
@@ -45,6 +53,25 @@ public class Merchant {//后台客服
 	public void setFaceimg(String faceimg) {
 		this.faceimg = faceimg;
 	}
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	public String getRname() {
+		return rname;
+	}
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+	public String getCts() {
+		return cts;
+	}
+	public void setCts(String cts) {
+		this.cts = cts;
+	}
+	 
 	 
 	
 	

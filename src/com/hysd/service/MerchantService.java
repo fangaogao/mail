@@ -11,5 +11,6 @@ public interface MerchantService{
 	 
 
 	public  Merchant findForLogin(Merchant m);
+	public void saveOrUpdate(Merchant m);
 
 }

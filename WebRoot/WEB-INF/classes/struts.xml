@@ -22,17 +22,27 @@
 	
 	<!-- 国际化资源文件
 	<constant name="struts.custom.i18n.resources" value="globalMessages" />
-	 -->
+	   -->
 
 	
 	<package name="hysd" extends="struts-default">
+		<!-- 拦截器栈 -->
+		<interceptors>  
+	         <interceptor name="loginInteceptor" class="com.hysd.interceptor.LoginInterceptor" />  
+	         <interceptor-stack name="loginStack">  
+	              <interceptor-ref name="loginInteceptor"></interceptor-ref>  
+	              <interceptor-ref name="defaultStack"></interceptor-ref>  
+	         </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="loginStack"/>
 	
 		<default-action-ref name="index_index" />
 		
-		<!--<global-results>
-			<result name="exceptionPage">/error.html</result>
+		<global-results>
+			<!--<result name="exceptionPage">/error.html</result>-->
+			<result name="login" type="redirectAction"> login_login</result>   
 		</global-results> 
-		<global-exception-mappings>
+		<!-- <global-exception-mappings>
 			<exception-mapping result="exceptionPage" exception="java.lang.Exception" />
 		</global-exception-mappings> -->
 		
@@ -54,7 +64,10 @@
 			<result name="list">/admin/role_list.jsp</result>
 			<result name="add">/admin/role_add.jsp</result>
 			<result name="update">/admin/role_update.jsp</result>
-			 
+		</action>
+		
+		<action name="merchant_*"  method="{1}" class="com.hysd.action.admin.MerchantAction">
+			<result name="info">/admin/merchant_info.jsp</result>
 		</action>
 		
 	</package>

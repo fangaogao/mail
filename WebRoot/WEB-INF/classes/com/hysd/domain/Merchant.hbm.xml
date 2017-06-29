@@ -12,6 +12,7 @@
 		<property name="name" column="name"   type="string" />
 		<property name="status" column="status"   type="integer" />
 		<property name="faceimg" column="faceimg"   type="string" />
-	 	 
+		<property name="cts" column="cts"   type="string" />
+	 	<many-to-one name="role" class="Role" column="rid" /> 
 	</class>
 </hibernate-mapping>
