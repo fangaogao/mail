@@ -48,7 +48,7 @@ public class RoleServiceImpl implements RoleService {
 		PageList<Role> pl=new PageList<Role>();
 		pl.setList(rolelist);
 		pl.setCount(count);
-		pl.setPages(pageSize); 
+		pl.setPageSize(pageSize); 
 		pl.setPages(pl.getP(count, pageSize));
 		
 		return pl;

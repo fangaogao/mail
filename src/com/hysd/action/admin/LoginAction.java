@@ -46,7 +46,7 @@ public class LoginAction extends ActionSupport{
 		}else{
 			if(mer.getStatus()==Sys.Common.IS_USE){
 				if(mer.getRole()!=null){
-					mer.setRname(mer.getRole().getRname());//session关闭，暂存如此字段中
+					mer.setRname(mer.getRole().getRname());//session关闭，暂存此字段中
 				}
 				//登录信息放入session中
 				ActionContext.getContext().getSession().put("admin", mer);
