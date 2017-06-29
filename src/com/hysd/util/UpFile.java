@@ -46,9 +46,7 @@ public class UpFile {
  
 	 public static void deleteFile(String path){   
 		 String abPath= ServletActionContext.getRequest().getRealPath("")+path;
-		 System.out.println(abPath+"---&&&&&&-----------");
 		 File f=new File(abPath);
 		 if(f.exists())f.delete();
-         
      }  
 }
