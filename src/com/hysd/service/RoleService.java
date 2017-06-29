@@ -10,4 +10,5 @@ public interface RoleService{
 	public void save(Role r);
 	public Role getById(int id); 
 	public void update(Role r);
+	public void delete(Role r);
 }

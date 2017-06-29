@@ -10,7 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hysd.cons.Sys;
+ 
 import com.hysd.dao.BaseDAO;
 import com.hysd.domain.PageList;
 import com.hysd.domain.Role;
@@ -67,6 +67,11 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public void update(Role r) {
 		baseDAO.update(r);
+	}
+
+	@Override
+	public void delete(Role r) {
+		baseDAO.delete(r);
 	}
 	
 	 
