@@ -30,7 +30,7 @@ public class RoleServiceImpl implements RoleService {
 		String hql_count="select count(*) from Role where 1=1";
 		
 		List<Object> li=null;
-	 
+		//动态拼接hql，灵活处理多条件查询
 		if(r!=null){
 			li=new ArrayList<Object>();
 			if(StringUtils.isNotBlank(r.getRname())){
