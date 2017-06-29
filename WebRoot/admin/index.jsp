@@ -24,7 +24,7 @@
 	   </ul>
 	  
 	  
-  <!--<ul style="display:block">
+  <!--1<ul style="display:block">
     <li><a href="info.html" target="right"><span class="icon-caret-right"></span>网站设置</a></li>
     <li><a href="pass.html" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
     <li><a href="page.html" target="right"><span class="icon-caret-right"></span>单页管理</a></li>  
