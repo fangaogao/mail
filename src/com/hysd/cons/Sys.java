@@ -9,7 +9,6 @@ public class Sys {
 		public static Integer IS_USE=1;
 		/*0,禁用*/
 		public static Integer UN_USE=0;
-		
 		/*默认一页几条数据*/
 		public static Integer PGGESIZE=10;
 		/*图片上传路径*/
