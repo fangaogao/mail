@@ -94,7 +94,7 @@ public class RoleAction extends ActionSupport implements ServletRequestAware{
 		}
 		return list();
 	}
-	public String delete(){
+	public String delete(){//这个方法还需要完善，如果此角色已经分配了用户，是不可以删除的
 		if(role.getRid()!=null){
 			Merchant m=(Merchant) ActionContext.getContext().getSession().get("admin");
 			
