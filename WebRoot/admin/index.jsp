@@ -11,7 +11,7 @@
     <h1><img src="<c:if test="${not empty admin.faceimg }">${imgctx}${admin.faceimg }</c:if>
     		<c:if test="${empty admin.faceimg }">${ctx}/images/y.jpg</c:if>" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
   </div>
-  <div class="head-l"><a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+  <div class="head-l"><a class="button button-little bg-green" href="index_index.do" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
@@ -76,10 +76,10 @@ $(function(){
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切换语言：<a href="##">中文</a> &nbsp;&nbsp;<a href="##">英文</a> </li>
 </ul>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="${ctx}/info.html" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="${ctx}/home.jsp" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
-<p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+<p></p>
 </div>
 </body>
 </html>

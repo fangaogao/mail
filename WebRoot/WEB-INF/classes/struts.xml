@@ -39,12 +39,12 @@
 		<default-action-ref name="index_index" />
 		
 		<global-results>
-			<!--<result name="exceptionPage">/error.html</result>-->
+			<result name="exceptionPage">/error.html</result>
 			<result name="login" type="redirectAction"> login_login</result>   
 		</global-results> 
-		<!-- <global-exception-mappings>
+		<global-exception-mappings>
 			<exception-mapping result="exceptionPage" exception="java.lang.Exception" />
-		</global-exception-mappings> -->
+		</global-exception-mappings>
 		
 		 
 		<!-- jsp前台 -->
