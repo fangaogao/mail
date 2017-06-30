@@ -50,7 +50,7 @@
 				</div>
 				<!--gouCar/-->
 				<div class="myChunlv">
-					<a href="vip.html"><img src="${ctx}/jsp/images/mychunlv.jpg" width="112"
+					<a href="${ctx}/jsp/vip.html"><img src="${ctx}/jsp/images/mychunlv.jpg" width="112"
 						height="34" /></a>
 				</div>
 				<!--myChunlv/-->
