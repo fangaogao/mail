@@ -15,9 +15,8 @@ public interface CmgLogService{
 	 * @param c
 	 */
 	public void save(CmgLog c);
-	
 	/**
-	 * 分页 查询（可带条件）
+	 * 分页查询日志（带条件）
 	 * @param c
 	 * @param pageNo
 	 * @param pageSize
