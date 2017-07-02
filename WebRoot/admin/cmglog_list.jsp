@@ -4,7 +4,7 @@
 
 	<head>
 		<%@ include file="common.jsp"%>  
-		<title>系统日志</title>
+		<title>系统日志管理</title>
 		 
 	</head>
 
@@ -16,7 +16,7 @@
 				<div class="padding border-bottom">
 					<ul class="search" style="padding-left:10px;">
 						<li>
-							<input type="date" placeholder="请输入时间" value="${cmgLog.cmts }" name="cmgLog.cmts" class="input" style="width:250px; line-height:17px;display:inline-block" />
+							<input type="date" placeholder="请输入时间" value="${cmgLog.cmts}" name="cmgLog.cmts" class="input" style="width:250px; line-height:17px;display:inline-block" />
 							<button href="javascript:void(0)" class="button border-main icon-search" type="submit"> 搜索</button>
 						</li>
 					</ul>
@@ -27,22 +27,22 @@
 			<tr>
 				<th width="10%">ID</th>
 				<th>创建时间</th>
-				<th>日志内容</th>
+				<th>内容</th>
 				<th>类型</th>
 			</tr>
 			<volist name="list" id="vo">
 				<c:forEach var="item" items="${list}" varStatus="status">
 				<tr>
-					<td width="10%">${item.cmid}</td>
+					<td width="10%">${item.cmid }</td>
 					<td>${item.cmts }</td>
 					<td>${item.content }</td>
-					<td>${item.type }</td>
+					<td>${item.type}</td>
 				</tr>
 				</c:forEach>
 				<tr>
 					<td colspan="8">
 						<form method="post" action="cmglog_list.do">
-							<input type="hidden" value="${cmgLog.cmts}" name="cmgLog.cmts"/>
+							<input type="hidden" value="${cmgLog.cmts }" name="cmgLog.cmts"/>
 							<%@ include file="page.jsp"%>   
 						</form>
 						
@@ -50,8 +50,7 @@
 				</tr>
 			</volist>
 		</table>
-			
-	
+
 	</body>
 
 </html>
