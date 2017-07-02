@@ -39,12 +39,12 @@
 		<default-action-ref name="index_index" />
 		
 		<global-results>
-			<result name="exceptionPage">/error.html</result>
+<!-- 			<result name="exceptionPage">/error.html</result> -->
 			<result name="login" type="redirectAction"> login_login</result>   
 		</global-results> 
-		<global-exception-mappings>
-			<exception-mapping result="exceptionPage" exception="java.lang.Exception" />
-		</global-exception-mappings>
+<!-- 		<global-exception-mappings> -->
+<!-- 			<exception-mapping result="exceptionPage" exception="java.lang.Exception" /> -->
+<!-- 		</global-exception-mappings> -->
 		
 		 
 		<!-- jsp前台 -->
@@ -64,6 +64,9 @@
 			<result name="list">/admin/role_list.jsp</result>
 			<result name="add">/admin/role_add.jsp</result>
 			<result name="update">/admin/role_update.jsp</result>
+		</action>
+		<action name="cmglog_*"  method="{1}" class="com.hysd.action.admin.CmgLogAction">
+			<result name="list">/admin/cmglog_list.jsp</result>
 		</action>
 		
 		<action name="merchant_*"  method="{1}" class="com.hysd.action.admin.MerchantAction">
