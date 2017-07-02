@@ -52,11 +52,9 @@ public class CmgLogAction extends ActionSupport implements ServletRequestAware{
 		return cmgLog;
 	}
 
-
 	public void setCmgLog(CmgLog cmgLog) {
 		this.cmgLog = cmgLog;
 	}
-
 
 	public Integer getPageNo() {
 		return pageNo;
