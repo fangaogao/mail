@@ -15,13 +15,13 @@
 </div>
 <div class="leftnav">
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
-  <h2><span class="icon-user"></span>系统管理</h2>
+  <h2><span class="icon-th-large"></span>系统管理</h2>
 	  <ul style="display:block">
 	    <li><a href="role_list.do" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
 	    <li><a href="${ctx }/menu_list.html" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
 	    <li><a href="${ctx }/role_menu.html" target="right"><span class="icon-caret-right"></span>权限分配</a></li>  
 	    <li><a href="${ctx }/merchant_list.html" target="right"><span class="icon-caret-right"></span>客服管理</a></li>
-	     <li><a href="" target="right"><span class="icon-caret-right"></span>系统日志</a></li>      
+	     <li><a href="cmglog_list.do" target="right"><span class="icon-caret-right"></span>系统日志</a></li>      
 	   </ul>
 	  
 	  
@@ -33,14 +33,14 @@
     <li><a href="book.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>     
     <li><a href="column.html" target="right"><span class="icon-caret-right"></span>栏目管理</a></li>
   </ul>   -->
-  <h2><span class="icon-pencil-square-o"></span>商品管理</h2>
+  <h2><span class="icon-gift"></span>商品管理</h2>
   <ul>
     <li><a href="${ctx }/directory_list.html" target="right"><span class="icon-caret-right"></span>目录管理</a></li>
     <li><a href="${ctx }/priceUnit_list.html" target="right"><span class="icon-caret-right"></span>单价单位</a></li>   
     <li><a href="${ctx }/goods_list.html" target="right"><span class="icon-caret-right"></span>商品管理</a></li>        
   </ul>
   
-  <h2><span class="icon-pencil-square-o"></span>订单管理</h2>
+  <h2><span class="icon-list-alt"></span>订单管理</h2>
   <ul>
     <li><a href="" target="right"><span class="icon-caret-right"></span>待支付</a></li>
     <li><a href="" target="right"><span class="icon-caret-right"></span>待发货</a></li>   
@@ -49,7 +49,7 @@
     <li><a href="" target="right"><span class="icon-caret-right"></span>已退款</a></li>       
   </ul>   
   
-  <h2><span class="icon-pencil-square-o"></span>个人中心</h2>
+  <h2><span class="icon-user"></span>个人中心</h2>
   <ul>
     <li><a href="${ctx }/merchant_info.do" target="right"><span class="icon-caret-right"></span>基本信息</a></li>
     <li><a href="" target="right"><span class="icon-caret-right"></span>修改密码</a></li>        

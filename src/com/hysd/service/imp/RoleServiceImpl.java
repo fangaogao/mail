@@ -42,7 +42,7 @@ public class RoleServiceImpl implements RoleService {
 		}
 		hql_list+=" order by cts desc";
 		
-		List<Role> rolelist=baseDAO.find(hql_list,li,pageNo==null?1:pageNo,pageSize);
+		List<Role> rolelist=baseDAO.find(hql_list,li,pageNo,pageSize);
 		Long count=baseDAO.count(hql_count,li);
 		
 		PageList<Role> pl=new PageList<Role>();
