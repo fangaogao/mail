@@ -2,6 +2,8 @@ package com.hysd.service.imp;
 
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -25,9 +27,12 @@ public class MerchantServiceImpl implements MerchantService {
 		return mer;
 	}
 
-	@Override
 	public void saveOrUpdate(Merchant m) {
 		baseDAO.saveOrUpdate(m);
+	}
+
+	public List<Merchant> findAll() {
+		return baseDAO.find("from Merchant");
 	}
 
 	  

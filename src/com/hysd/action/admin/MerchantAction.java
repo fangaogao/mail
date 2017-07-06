@@ -11,9 +11,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.stereotype.Controller;
 
+import com.hysd.cons.Sys;
 import com.hysd.domain.Merchant;
 import com.hysd.service.MerchantService;
 import com.hysd.util.UpFile;
@@ -56,6 +58,33 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 		return "info";
 	}
 	
+	/**
+	 * 添加Merchant之前 跳转到添加页面
+	 * @return
+	 */
+	public String addPre(){
+		return "addPre";
+	}
+	
+	/**
+	 * 添加Merchant
+	 * @return
+	 */
+	public String add(){
+	    System.out.println(merchant);
+		merchantService.saveOrUpdate(merchant);
+		return "add";
+	}
+	
+	/**
+	 * 查询所有Merchant
+	 * @return
+	 */
+	public String list(){
+		List<Merchant> merLists = merchantService.findAll();
+		ActionContext.getContext().put("merLists", merLists);
+		return "list";
+	}
 	
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
@@ -70,13 +99,7 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 		this.file = file;
 	}
 
-	public Merchant getMerchant() {
-		return merchant;
-	}
-
-	public void setMerchant(Merchant merchant) {
-		this.merchant = merchant;
-	}
+	
 
 
 	 
