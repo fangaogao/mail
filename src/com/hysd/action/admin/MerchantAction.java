@@ -71,7 +71,6 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 	 * @return
 	 */
 	public String addPre(){
-		ActionContext.getContext().put("roleli", roleService.getList());
 		return "addPre";
 	}
 	
