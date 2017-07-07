@@ -54,7 +54,7 @@
 							style="width: 260px; line-height: 17px; display: inline-block"
 							data-validate="required:请选择角色">
 							<c:forEach items="${lists}" var="item">
-								<option value="${item.rname}" <c:if test="${item.rid eq merchant.role.rid}">selected</c:if> >${item.rname}</option>
+								<option value="${item.rid}" <c:if test="${item.rid eq merchant.role.rid}">selected</c:if> >${item.rname}</option>
 							</c:forEach>
 						</select>
 

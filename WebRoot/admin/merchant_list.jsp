@@ -49,7 +49,7 @@
 								<td>${merchant.name}</td>
 								<td>${merchant.mobile}</td>
 								<td>${merchant.status}</td>
-								<td>${merchant.role.rid}</td>
+								<td>${merchant.role.rname}</td>
 								<td>${merchant.cts}</td>
 							
 								<td>
