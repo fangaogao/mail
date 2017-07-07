@@ -3,6 +3,9 @@ package com.hysd.domain;
 import java.util.List;
 
 public class PageList<T> {//分页查询
+	
+	
+	
 	private List<T> list;//对象list
 	private Long count;//总的记录数
 	private Integer pages;//总的页数
@@ -16,6 +19,11 @@ public class PageList<T> {//分页查询
 	}
 	public Long getCount() {
 		return count;
+	}
+	@Override
+	public String toString() {
+		return "PageList [list=" + list + ", count=" + count + ", pages="
+				+ pages + ", pageSize=" + pageSize + "]";
 	}
 	public void setCount(Long count) {
 		this.count = count;

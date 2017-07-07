@@ -6,6 +6,11 @@ import java.util.Set;
 public class Role {//角色
 	private Integer rid;	
 	private String rname;//	角色名称
+	@Override
+	public String toString() {
+		return "Role [rid=" + rid + ", rname=" + rname + ", cts=" + cts
+				+ ", merchant=" + merchant + "]";
+	}
 	private String cts;//	创建时间戳
 	private Set<Merchant> merchant = new HashSet<Merchant>();
 	

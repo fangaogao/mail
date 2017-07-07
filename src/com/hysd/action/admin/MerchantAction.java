@@ -17,7 +17,10 @@ import org.springframework.stereotype.Controller;
 
 import com.hysd.cons.Sys;
 import com.hysd.domain.Merchant;
+import com.hysd.domain.PageList;
+import com.hysd.domain.Role;
 import com.hysd.service.MerchantService;
+import com.hysd.service.RoleService;
 import com.hysd.util.UpFile;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -28,9 +31,14 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 	HttpServletRequest requset;
 	@Resource
 	MerchantService merchantService;
-	 //上传文件   
+	@Resource
+	RoleService roleService;
+
+	//上传文件   
     private File file;   
     private Merchant merchant;   
+    private Integer pageNo;//当前页码
+	private Integer pageSize;//一页几条数据
 
 	public String info(){
 		return "info";
@@ -97,16 +105,20 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 			return list();
 		}
 		merchant = merchantService.findById(merchant.getMid());
+		PageList<Role> lists = roleService.findAll(new Role(), pageNo=(pageNo==null?1:pageNo), pageSize=(pageSize==null?Sys.Common.PGGESIZE:pageSize));
+		ActionContext.getContext().put("lists", lists.getList());
 		return "editPre";
 	}
 	
 	/**
 	 * 修改Merchant
+	 * 要在下拉列表中显示Role，要先查询Role
 	 */
 	public String edit(){
-		merchantService.saveOrUpdate(merchant);
-		return list();
+		merchantService.saveOrUpdate(merchant); 
+		return "list";
 	}
+	
 	
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
