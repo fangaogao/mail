@@ -73,6 +73,13 @@ public class Merchant {//后台客服
 	}
 	 
 	 
+	@Override
+	public String toString() {
+		return "Merchant [mid=" + mid + ", mobile=" + mobile + ", pwd=" + pwd
+				+ ", name=" + name + ", status=" + status + ", faceimg="
+				+ faceimg + ", cts=" + cts + ", role=" + role + ", rname="
+				+ rname + "]";
+	}
 	
 	
 

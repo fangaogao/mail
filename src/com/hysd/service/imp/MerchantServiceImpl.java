@@ -35,6 +35,14 @@ public class MerchantServiceImpl implements MerchantService {
 		return baseDAO.find("from Merchant");
 	}
 
+	/**
+	 * 通过mid查询merchant
+	 */
+	public Merchant findById(Integer mid) {
+		Merchant merchant = baseDAO.get(Merchant.class, mid);
+		return merchant;
+	}
+
 	  
 	 
 }

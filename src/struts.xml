@@ -74,6 +74,7 @@
 			<result name="addPre">/admin/merchant_add.jsp</result>
 			<result name="add" type="redirectAction">/merchant_list.do</result>
 			<result name="list">/admin/merchant_list.jsp</result>
+			<result name="editPre">/admin/merchant_update.jsp</result>
 		</action>
 		
 	</package>

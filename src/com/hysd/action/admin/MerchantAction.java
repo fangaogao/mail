@@ -86,6 +86,28 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 		return "list";
 	}
 	
+	/**
+	 * 修改Merchant之前
+	 * 先通过mid查merchant
+	 * 然后跳转到修改页面
+	 * @return
+	 */
+	public String editPre(){
+		if(merchant.getMid() == null){
+			return list();
+		}
+		merchant = merchantService.findById(merchant.getMid());
+		return "editPre";
+	}
+	
+	/**
+	 * 修改Merchant
+	 */
+	public String edit(){
+		merchantService.saveOrUpdate(merchant);
+		return list();
+	}
+	
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
 		this.requset=arg0;
@@ -99,14 +121,12 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 		this.file = file;
 	}
 
-	
+	public Merchant getMerchant() {
+		return merchant;
+	}
 
+	public void setMerchant(Merchant merchant) {
+		this.merchant = merchant;
+	}
 
-	 
-	 
-	
-	 
-
-	
-	 
 }

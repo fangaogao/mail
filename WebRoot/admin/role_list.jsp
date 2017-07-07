@@ -42,8 +42,8 @@
 					<td>${item.cts }</td>
 					<td>
 						<div class="button-group">
-							<a class="button border-main" href="role_update.do?role.rid=${item.rid }"><span class="icon-edit"></span> 修改</a>
-							<a class="button border-red del" href="role_delete.do?role.rid=${item.rid }&pageNo=${pageNo}"><span class="icon-trash-o"></span> 删除</a>
+							<a class="button border-main" href="role_update.do?role.rid=${item.rid}"><span class="icon-edit"></span> 修改</a>
+							<a class="button border-red del" href="role_delete.do?role.rid=${item.rid}&pageNo=${pageNo}"><span class="icon-trash-o"></span> 删除</a>
 						</div>
 					</td>
 				</tr>
@@ -51,7 +51,7 @@
 				<tr>
 					<td colspan="8">
 						<form method="post" action="role_list.do">
-							<input type="hidden" value="${role.rname }" name="role.rname"/>
+							<input type="hidden" value="${role.rname}" name="role.rname"/>
 							<%@ include file="page.jsp"%>   
 						</form>
 						
