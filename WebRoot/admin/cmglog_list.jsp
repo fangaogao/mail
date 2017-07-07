@@ -36,7 +36,13 @@
 					<td width="10%">${item.cmid }</td>
 					<td>${item.cmts }</td>
 					<td>${item.content }</td>
-					<td>${item.type}</td>
+					<td>
+						<c:if test="${item.type eq 0 }">创建</c:if>
+						<c:if test="${item.type eq 1 }">修改</c:if>
+						<c:if test="${item.type eq 2 }">删除</c:if>
+						<c:if test="${item.type eq 3 }">登录</c:if>
+						<c:if test="${item.type eq 4 }">其它</c:if>
+					</td>
 				</tr>
 				</c:forEach>
 				<tr>
