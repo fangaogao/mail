@@ -16,7 +16,8 @@
 				<div class="padding border-bottom">
 					<ul class="search" style="padding-left:10px;">
 						<li>
-							<input type="date" placeholder="请输入时间" value="${cmgLog.cmts}" name="cmgLog.cmts" class="input" style="width:250px; line-height:17px;display:inline-block" />
+							<input type="date" placeholder="请输入时间" value="${cmgLog.startTs}" name="cmgLog.startTs" class="input" style="width:250px; line-height:17px;display:inline-block" />
+							<input type="date" placeholder="请输入时间" value="${cmgLog.endTs}" name="cmgLog.endTs" class="input" style="width:250px; line-height:17px;display:inline-block" />
 							<button href="javascript:void(0)" class="button border-main icon-search" type="submit"> 搜索</button>
 						</li>
 					</ul>
@@ -48,6 +49,8 @@
 				<tr>
 					<td colspan="8">
 						<form method="post" action="cmglog_list.do">
+							<input type="hidden" value="${cmgLog.startTs }" name="cmgLog.startTs"/>
+							<input type="hidden" value="${cmgLog.endTs }" name="cmgLog.endTs"/>
 							<input type="hidden" value="${cmgLog.cmts }" name="cmgLog.cmts"/>
 							<%@ include file="page.jsp"%>   
 						</form>

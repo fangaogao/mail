@@ -36,17 +36,17 @@ public class CmgLogServiceImpl implements CmgLogService {
 		if(cmgLog!=null){
 			li=new ArrayList<Object>();
 			//条件查询一
-			if(StringUtils.isNotBlank(cmgLog.getCmts())){
-				hql_count+=" and cmts like ?";
-				hql_list+=" and cmts like ?";
-				li.add("%"+cmgLog.getCmts()+"%");
+			if(StringUtils.isNotBlank(cmgLog.getStartTs())){
+				hql_count+=" and cmts >= ?";
+				hql_list+=" and cmts >= ?";
+				li.add(cmgLog.getStartTs());
 			}
-			//条件查询二
-			/*if(StringUtils.isNotBlank(cmgLog.getCmts())){
-				hql_count+=" and cmts like ?";
-				hql_list+=" and cmts like ?";
-				li.add("%"+cmgLog.getCmts()+"%");
-			}*/
+			
+			if(StringUtils.isNotBlank(cmgLog.getEndTs())){
+				hql_count+=" and cmts <= ?";
+				hql_list+=" and cmts <= ?";
+				li.add(cmgLog.getEndTs());
+			}
 				
 		}
 		hql_list+=" order by cmts desc";//默认是升序（ase）  desc的意思是降序
