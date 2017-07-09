@@ -9,7 +9,7 @@
 		</id>
 		<property name="cmts" column="cmts"   type="string" />
 		<property name="content" column="content"   type="string" />
-		<property name="type" column="type"   type="string" />
+		<property name="type" column="type"   type="integer" />
 	 	 
 	</class>
 </hibernate-mapping>
