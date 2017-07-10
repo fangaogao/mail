@@ -22,7 +22,7 @@
 						</li>
 						<li>
 							<input type="text" placeholder="请输入客服姓名" name="merchant.name" value="${merchant.name}" class="input" style="width:250px; line-height:17px;display:inline-block" />
-							<a href="javascript:void(0)" class="button border-main icon-search" onclick="submit"> 搜索</a>
+							<button  class="button border-main icon-search" type="submit"> 搜索</button>
 						</li>
 					</ul>
 				</div>

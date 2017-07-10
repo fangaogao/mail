@@ -73,6 +73,11 @@ public class RoleServiceImpl implements RoleService {
 	public void delete(Role r) {
 		baseDAO.delete(r);
 	}
+
+	@Override
+	public List<Role> getList() {
+		return baseDAO.find("from role");
+	}
 	
 	 
 	  
