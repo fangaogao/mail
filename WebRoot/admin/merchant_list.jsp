@@ -26,6 +26,7 @@
 						</li>
 					</ul>
 				</div>
+		</form>	
 				<table class="table table-hover text-center">
 					<tr>
 						<th width="10%">ID</th>
@@ -75,7 +76,7 @@
 					</tr>
 				</table>
 			</div>
-		</form>
+		
 		
 		
 		 
