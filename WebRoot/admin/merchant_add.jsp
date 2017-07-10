@@ -1,24 +1,18 @@
-<%@page pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="renderer" content="webkit">
-		<title></title>
-		<link rel="stylesheet" href="css/pintuer.css">
-		<link rel="stylesheet" href="css/admin.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/pintuer.js"></script>
+		<%@ include file="common.jsp"%>
+		<title>增加客服管理人员</title>
 	</head>
 
 	<body>
 		<div class="panel admin-panel">
 			<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加客服管理人员</strong></div>
 			<div class="body-content">
-				<form method="post" class="form-x" action="${pageContext.request.contextPath}/merchant_add.do">
+				<form method="post" class="form-x" action="${imgctx}/merchant_add.do">
 					<div class="form-group">
 						<div class="label">
 							<label>姓名：</label>
@@ -43,9 +37,10 @@
 						</div>
 						<div class="field">
 							<select name="merchant.role.rid" class="input"   style="width:260px; line-height:17px; display:inline-block" data-validate="required:请选择角色" >
-					            <option value="">选择</option>
-					            <option value="1">系统管理员</option>
-					            <option value="0">订单管理员</option>
+					            	<option value="">--请选择--</option>
+					            <c:forEach items="${roles}" var="item">
+					            	<option value="${item.rid}">${item.rname}</option>
+					            </c:forEach>
 					        </select>
 							<div class="tips"></div>
 						</div>

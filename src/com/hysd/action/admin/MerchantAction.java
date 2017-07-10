@@ -5,6 +5,7 @@ package com.hysd.action.admin;
  
  
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,6 +22,7 @@ import com.hysd.domain.PageList;
 import com.hysd.domain.Role;
 import com.hysd.service.MerchantService;
 import com.hysd.service.RoleService;
+import com.hysd.util.DateUtils;
 import com.hysd.util.UpFile;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,10 +40,83 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
     private File file;   
     private Merchant merchant;   
     private Integer pageNo;//当前页码
+
 	private Integer pageSize;//一页几条数据
+	private Long count;//总的记录数
+	private Integer pages;//总的页数
 
 	public String info(){
 		return "info";
+	}
+	
+	/**
+	 * 添加Merchant之前
+	 * 查询所有Role
+	 * 跳转到添加页面
+	 * @return
+	 */
+	public String addPre(){
+		List<Role> roles = roleService.getList();
+		ActionContext.getContext().put("roles", roles);
+		return "addPre";
+	}
+	
+	/**
+	 * 添加Merchant
+	 * @return
+	 */
+	public String add(){
+		merchant.setCts(DateUtils.DateTimeToString(new Date()));
+		merchantService.saveOrUpdate(merchant);
+		return "add";
+	}
+	
+	/**
+	 * 分页查询所有Merchant
+	 * @return
+	 */
+	public String list(){
+		
+		pageNo=(pageNo==null?1:pageNo);
+		pageSize=(pageSize==null?Sys.Common.PGGESIZE:pageSize);
+		PageList<Merchant> pl = merchantService.findAll(merchant,pageNo,pageSize);
+		if(pl != null){
+			ActionContext.getContext().put("merLists", pl.getList());
+			this.count = pl.getCount();
+			this.pages = pl.getPages();
+		}
+		return "list";
+	}
+	
+	/**
+	 * 修改Merchant之前
+	 * 先通过mid查merchant
+	 * 然后跳转到修改页面
+	 * @return
+	 */
+	public String editPre(){
+		if(merchant.getMid() == null){
+			return list();
+		}
+		merchant = merchantService.findById(merchant.getMid());
+		List<Role> lists = roleService.getList();
+		ActionContext.getContext().put("lists", lists);
+		return "editPre";
+	}
+	
+	/**
+	 * 修改Merchant
+	 * 要在下拉列表中显示Role，要先查询Role
+	 */
+	public String edit(){
+		if(merchant.getMid() != null){
+			Merchant newMerchant = merchantService.findById(merchant.getMid());
+			newMerchant.setName(merchant.getName());
+			newMerchant.setMobile(merchant.getMobile());
+			newMerchant.setRole(merchant.getRole());
+			merchantService.saveOrUpdate(newMerchant);			
+		}
+		return list();
 	}
 	
 	public String uploadface(){
@@ -66,63 +141,40 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 		return "info";
 	}
 	
-	/**
-	 * 添加Merchant之前 跳转到添加页面
-	 * @return
-	 */
-	public String addPre(){
-		return "addPre";
-	}
-	
-	/**
-	 * 添加Merchant
-	 * @return
-	 */
-	public String add(){
-	    System.out.println(merchant);
-		merchantService.saveOrUpdate(merchant);
-		return "add";
-	}
-	
-	/**
-	 * 查询所有Merchant
-	 * @return
-	 */
-	public String list(){
-		List<Merchant> merLists = merchantService.findAll();
-		ActionContext.getContext().put("merLists", merLists);
-		return "list";
-	}
-	
-	/**
-	 * 修改Merchant之前
-	 * 先通过mid查merchant
-	 * 然后跳转到修改页面
-	 * @return
-	 */
-	public String editPre(){
-		if(merchant.getMid() == null){
-			return list();
-		}
-		merchant = merchantService.findById(merchant.getMid());
-		PageList<Role> lists = roleService.findAll(new Role(), pageNo=(pageNo==null?1:pageNo), pageSize=(pageSize==null?Sys.Common.PGGESIZE:pageSize));
-		ActionContext.getContext().put("lists", lists.getList());
-		return "editPre";
-	}
-	
-	/**
-	 * 修改Merchant
-	 * 要在下拉列表中显示Role，要先查询Role
-	 */
-	public String edit(){
-		merchantService.saveOrUpdate(merchant); 
-		return "list";
-	}
-	
-	
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
 		this.requset=arg0;
+	}
+	public Integer getPageNo() {
+		return pageNo;
+	}
+	
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+	}
+	
+	public Integer getPageSize() {
+		return pageSize;
+	}
+	
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+	
+	public Long getCount() {
+		return count;
+	}
+	
+	public void setCount(Long count) {
+		this.count = count;
+	}
+	
+	public Integer getPages() {
+		return pages;
+	}
+	
+	public void setPages(Integer pages) {
+		this.pages = pages;
 	}
 
 	public File getFile() {

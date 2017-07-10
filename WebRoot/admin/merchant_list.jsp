@@ -1,34 +1,28 @@
-<%@page pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-cn">
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="renderer" content="webkit">
-		<title></title>
-		<link rel="stylesheet" href="css/pintuer.css">
-		<link rel="stylesheet" href="css/admin.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/pintuer.js"></script>
+		<%@ include file="common.jsp"%>
+		<title>客服列表</title>
 	</head>
 
 	<body>
-		<form method="post" action="" id="listform">
+		<form method="post" action="merchant_list.do" id="listform">
 			<div class="panel admin-panel">
-				<div class="panel-head"><strong class="icon-reorder"> 客服列表</strong>
+				<div class="panel-head"><strong class="icon-reorder">客服列表</strong>
 					<a href="merchant_add.html" style="float:right; display:none;">添加字段</a>
 				</div>
 				<div class="padding border-bottom">
 					<ul class="search" style="padding-left:10px;">
 						<li>
-							<a class="button border-main icon-plus-square-o" href="${pageContext.request.contextPath}/merchant_addPre.do"> 添加内容</a>
+							<a class="button border-main icon-plus-square-o" href="merchant_addPre.do">添加内容</a>
 						</li>
 						<li>
-							<input type="text" placeholder="请输入客服姓名" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
-							<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+							<input type="text" placeholder="请输入客服姓名" name="merchant.name" value="${merchant.name}" class="input" style="width:250px; line-height:17px;display:inline-block" />
+							<a href="javascript:void(0)" class="button border-main icon-search" onclick="submit"> 搜索</a>
 						</li>
 					</ul>
 				</div>
@@ -43,44 +37,42 @@
 						<th>操作</th>
 					</tr>
 
-					<c:forEach items="${merLists}" var="merchant">
+					<c:forEach items="${merLists}" var="item">
 						<tr>
-								<td width="10%">${merchant.mid}</td>
-								<td>${merchant.name}</td>
-								<td>${merchant.mobile}</td>
-								<td>${merchant.status}</td>
-								<td>${merchant.role.rid}</td>
-								<td>${merchant.cts}</td>
+								<td width="10%">${item.mid}</td>
+								<td>${item.name}</td>
+								<td>${item.mobile}</td>
+								<td>${item.status}</td>
+								<td>${item.role.rname}</td>
+								<td>${item.cts}</td>
 							
 								<td>
 									<div class="button-group">
 										<a class="button border-green" href="#">
 											<span class="icon-user"></span>
-											<c:if test="${merchant.status eq 1}">启用</c:if>
+											<c:if test="${item.status eq 1}">启用</c:if>
 										</a>
 										<a class="button border-red" href="#">
 											<span class="icon-fighter-jet"></span>
-											<c:if test="${merchant.status eq 0}">禁用</c:if>
+											<c:if test="${item.status eq 0}">禁用</c:if>
 										</a>
 										<a class="button border-blue" href="#"><span class="icon-adn"></span>初始化密码</a>
-										<a class="button border-main" href="${pageContext.request.contextPath}/merchant_editPre.do?merchant.mid=${merchant.mid}"><span class="icon-edit"></span> 修改</a>
+										<a class="button border-main" href="${imgctx}/merchant_editPre.do?merchant.mid=${item.mid}"><span class="icon-edit"></span> 修改</a>
 										<a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a>  
 									</div>
 								</td>
 						</tr>
 					</c:forEach>	
 						
-						<tr>
-							<td colspan="8">
-								<div class="pagelist">
-									<a href="">上一页</a> <span class="current">1</span>
-									<a href="">2</a>
-									<a href="">3</a>
-									<a href="">下一页</a>
-									<a href="">尾页</a>
-								</div>
-							</td>
-						</tr>
+					<tr>
+						<td colspan="8">
+							<form method="post" action="merchant_list.do">
+								<input type="hidden" value="${merchant.name}" name="merchant.name"/>
+								<%@ include file="page.jsp"%>   
+							</form>
+						</td>
+						
+					</tr>
 				</table>
 			</div>
 		</form>

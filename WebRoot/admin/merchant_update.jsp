@@ -1,19 +1,12 @@
-<%@page pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta name="renderer" content="webkit">
-<title></title>
-<link rel="stylesheet" href="css/pintuer.css">
-<link rel="stylesheet" href="css/admin.css">
-<script src="js/jquery.js"></script>
-<script src="js/pintuer.js"></script>
+ <%@ include file="common.jsp"%>
+ <title>修改客服管理人员APUR</title>
 </head>
 
 <body>
@@ -31,6 +24,7 @@
 					<div class="field">
 						<input type="text" class="input w50" value="${merchant.name}"
 							name="merchant.name" data-validate="required:请输入姓名" />
+						<input type="hidden" name="merchant.mid" value="${merchant.mid}">	
 						<div class="tips"></div>
 					</div>
 				</div>
@@ -54,7 +48,7 @@
 							style="width: 260px; line-height: 17px; display: inline-block"
 							data-validate="required:请选择角色">
 							<c:forEach items="${lists}" var="item">
-								<option value="${item.rname}" <c:if test="${item.rid eq merchant.role.rid}">selected</c:if> >${item.rname}</option>
+								<option value="${item.rid}" <c:if test="${item.rid eq merchant.role.rid}">selected</c:if> >${item.rname}</option>
 							</c:forEach>
 						</select>
 
