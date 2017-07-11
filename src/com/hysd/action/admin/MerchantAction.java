@@ -76,7 +76,7 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 	 * @return
 	 */
 	public String list(){
-		
+		System.out.println(merchant);
 		pageNo=(pageNo==null?1:pageNo);
 		pageSize=(pageSize==null?Sys.Common.PGGESIZE:pageSize);
 		PageList<Merchant> pl = merchantService.findAll(merchant,pageNo,pageSize);

@@ -7,8 +7,28 @@
 		<%@ include file="common.jsp"%>
 		<title>增加客服管理人员</title>
 	</head>
+	
+	<!-- 
+		判断手机号是否已经存在。
+		忘了ajax异步请求，回学校参考以前代码写...
+		<script type="text/javascript" src="admin/js/jquery.js"></script> 
+		<script type="text/javascript"> 
+		
+			$(".mobile").blur(function(){
+				var url = "${imgctx}/merchant_find.do";
+				var val = $(".mobile").val();
+				var datas = {name:val};
+				$.post(url,datas,function(data){
+					...
+				},json);
+			});
+	
+		</script> 
+	 -->
+	
 
 	<body>
+	
 		<div class="panel admin-panel">
 			<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加客服管理人员</strong></div>
 			<div class="body-content">
@@ -27,7 +47,7 @@
 							<label>手机号：</label>
 						</div>
 						<div class="field">
-							<input type="text" class="input w50" value="" name="merchant.mobile" data-validate="required:请输入手机号" />
+							<input type="text" class="mobile" value="" name="merchant.mobile" data-validate="required:请输入手机号" />
 							<div class="tips"></div>
 						</div>
 					</div>
