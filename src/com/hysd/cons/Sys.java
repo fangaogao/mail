@@ -10,7 +10,7 @@ public class Sys {
 		/*0,禁用*/
 		public static Integer UN_USE=0;
 		/*默认一页几条数据*/
-		public static Integer PGGESIZE=5;
+		public static Integer PGGESIZE=4;
 		/*图片上传路径*/
 		public static String FILEPATH="/upImgs";
 	}
