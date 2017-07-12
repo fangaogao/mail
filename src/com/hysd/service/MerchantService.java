@@ -19,5 +19,6 @@ public interface MerchantService{
 	public Merchant findById(Integer mid);
 	public PageList<Merchant> findAll(Merchant merchant, Integer pageNo,
 			Integer pageSize);
+	public Merchant findByMobile(String mobile);
 
 }

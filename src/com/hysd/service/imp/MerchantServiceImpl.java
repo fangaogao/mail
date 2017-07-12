@@ -81,6 +81,17 @@ public class MerchantServiceImpl implements MerchantService {
 		
 	}
 
+	/**
+	 * 查询当前mobile对应merchant
+	 */
+	public Merchant findByMobile(String mobile) {
+		List<Merchant> merchants = baseDAO.find("from Merchant where mobile = ?", new Object[]{mobile});
+		if(merchants.size() > 0 && merchants.get(0) != null){
+			return merchants.get(0);
+		}
+		return null;
+	}
+
 	  
 	 
 }

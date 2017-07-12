@@ -5,11 +5,14 @@ package com.hysd.action.admin;
  
  
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
@@ -76,7 +79,6 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 	 * @return
 	 */
 	public String list(){
-		System.out.println(merchant);
 		pageNo=(pageNo==null?1:pageNo);
 		pageSize=(pageSize==null?Sys.Common.PGGESIZE:pageSize);
 		PageList<Merchant> pl = merchantService.findAll(merchant,pageNo,pageSize);
@@ -117,6 +119,24 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 			merchantService.saveOrUpdate(newMerchant);			
 		}
 		return list();
+	}
+	
+	/**
+	 * 查询当前mobile对应的merchant
+	 * @return
+	 * @throws IOException 
+	 */
+	public String findByMobile() throws IOException{
+		Merchant existMerchant = merchantService.findByMobile(merchant.getMobile());
+		//得到response
+		HttpServletResponse response = ServletActionContext.getResponse();
+		PrintWriter writer = response.getWriter();
+		if(existMerchant != null){
+			writer.write("yes");
+		}else{
+			writer.write("no");
+		}
+		return NONE;
 	}
 	
 	public String uploadface(){
