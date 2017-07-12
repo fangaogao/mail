@@ -53,6 +53,13 @@ public class RoleServiceImpl implements RoleService {
 		
 		return pl;
 	}
+	
+	/**
+	 * 查询出所有Role
+	 */
+	public List<Role> getList() {
+		return baseDAO.find("from Role");
+	}
 
 	@Override
 	public void save(Role r) {
@@ -73,6 +80,8 @@ public class RoleServiceImpl implements RoleService {
 	public void delete(Role r) {
 		baseDAO.delete(r);
 	}
+
+
 	
 	 
 	  
