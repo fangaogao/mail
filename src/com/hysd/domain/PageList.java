@@ -9,7 +9,7 @@ public class PageList<T> {//分页查询
 	private List<T> list;//对象list
 	private Long count;//总的记录数
 	private Integer pages;//总的页数
-	private Integer pageSize;//一页多少跳
+	private Integer pageSize;//一页多少条
 	
 	public List<T> getList() {
 		return list;

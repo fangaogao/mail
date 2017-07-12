@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +81,7 @@
 	</c:if>
 	
 </div>
-<p>共${count }条数据,共${pages }页</p>
+<p>共${count}条数据,共${pages}页</p>
  
  <script type="text/javascript">
  $("#pagelist a").click(function(){

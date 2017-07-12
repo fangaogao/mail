@@ -12,21 +12,9 @@ public class CmgLog {// 后台客服操作日志
 	@IgnoreSizeOf
 	private String endTs;//结束时间
 
-	public String getEndTs() {
-		return endTs;
-	}
+	
 
-	public void setEndTs(String endTs) {
-		this.endTs = endTs;
-	}
-
-	public String getStartTs() {
-		return startTs;
-	}
-
-	public void setStartTs(String startTs) {
-		this.startTs = startTs;
-	}
+	
 
 	public Integer getCmid() {
 		return cmid;
@@ -58,6 +46,22 @@ public class CmgLog {// 后台客服操作日志
 
 	public void setType(Integer type) {
 		this.type = type;
+	}
+
+	public String getStartTs() {
+		return startTs;
+	}
+
+	public void setStartTs(String startTs) {
+		this.startTs = startTs;
+	}
+
+	public String getEndTs() {
+		return endTs;
+	}
+
+	public void setEndTs(String endTs) {
+		this.endTs = endTs;
 	}
 
 }
