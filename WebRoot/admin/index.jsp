@@ -20,7 +20,7 @@
 	    <li><a href="role_list.do" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
 	    <li><a href="${ctx }/menu_list.html" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
 	    <li><a href="${ctx }/role_menu.html" target="right"><span class="icon-caret-right"></span>权限分配</a></li>  
-	    <li><a href="${ctx }/merchant_list.do" target="right"><span class="icon-caret-right"></span>客服管理</a></li>
+	    <li><a href="${imgctx}/merchant_list.do" target="right"><span class="icon-caret-right"></span>客服管理</a></li>
 	     <li><a href="cmglog_list.do" target="right"><span class="icon-caret-right"></span>系统日志</a></li>      
 	   </ul>
 	  
