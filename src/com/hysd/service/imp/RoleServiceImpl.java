@@ -78,7 +78,7 @@ public class RoleServiceImpl implements RoleService {
 
 	@Override
 	public List<Role> getList() {
-		return baseDAO.find("from role");
+		return baseDAO.find("from Role");
 	}
 	
 	 
