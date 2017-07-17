@@ -35,7 +35,7 @@
   </ul>   -->
   <h2><span class="icon-gift"></span>商品管理</h2>
   <ul>
-    <li><a href="${ctx }/directory_list.html" target="right"><span class="icon-caret-right"></span>目录管理</a></li>
+    <li><a href="${imgctx }/directory_list.do" target="right"><span class="icon-caret-right"></span>目录管理</a></li>
     <li><a href="${ctx }/priceUnit_list.html" target="right"><span class="icon-caret-right"></span>单价单位</a></li>   
     <li><a href="${ctx }/goods_list.html" target="right"><span class="icon-caret-right"></span>商品管理</a></li>        
   </ul>

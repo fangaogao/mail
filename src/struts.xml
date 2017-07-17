@@ -77,6 +77,10 @@
 			<result name="editPre">/admin/merchant_update.jsp</result>
 		</action>
 		
+		<action name="directory_*" class="com.hysd.action.admin.DirectoryAction" method="{1}">
+			<result name="list">/admin/directory_list.jsp</result>
+		</action>
+		
 	</package>
 
 </struts>
