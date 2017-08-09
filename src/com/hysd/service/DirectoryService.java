@@ -14,4 +14,8 @@ public interface DirectoryService{
 	public PageList<Directory> findAll(Integer pageNo, Integer pageSize,
 			Directory directory);
 
+	public void add(Directory directory);
+	
+	
+
 }

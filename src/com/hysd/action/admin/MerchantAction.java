@@ -70,6 +70,7 @@ public class MerchantAction extends ActionSupport implements ServletRequestAware
 	 */
 	public String add(){
 		merchant.setCts(DateUtils.DateTimeToString(new Date()));
+		merchant.setStatus(1);
 		merchantService.saveOrUpdate(merchant);
 		return "add";
 	}

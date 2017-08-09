@@ -57,4 +57,15 @@ public class DirectoryServiceImpl implements DirectoryService {
 		
 		return pl;
 	}
+
+	/**
+	 * 增加一级目录
+	 */
+	public void add(Directory directory) {
+		baseDAO.save(directory);
+	}
+	
+	
+	
+	
 }

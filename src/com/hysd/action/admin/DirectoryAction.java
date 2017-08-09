@@ -1,8 +1,11 @@
 package com.hysd.action.admin;
 
+import java.io.File;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.stereotype.Controller;
 
@@ -10,7 +13,7 @@ import com.hysd.cons.Sys;
 import com.hysd.domain.Directory;
 import com.hysd.domain.PageList;
 import com.hysd.service.DirectoryService;
-import com.opensymphony.xwork2.ActionContext;
+import com.hysd.util.UpFile;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Controller
@@ -23,6 +26,27 @@ public class DirectoryAction extends ActionSupport implements ServletRequestAwar
 	private Integer pageSize;//每页记录数
 	private Integer pages;//总页数
 	private Long count;//总记录数
+	
+	private File file;//要上传的文件
+	private String fileFileName;//上传文件名称
+	
+	
+
+	public String getFileFileName() {
+		return fileFileName;
+	}
+
+	public void setFileFileName(String fileFileName) {
+		this.fileFileName = fileFileName;
+	}
+
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
+	}
 
 	/**
 	 * 按条件分页查询所有一级目录
@@ -39,9 +63,35 @@ public class DirectoryAction extends ActionSupport implements ServletRequestAwar
 		}
 		return "list";
 	}
-
+	
+	/**
+	 * 添加一级目录前提交到添加页面
+	 * @return
+	 */
+	public String addPre(){
+		return "addPre";
+	}
 	 
-
+	/**
+	 * 添加一级目录
+	 * @return
+	 */
+	public String add(){
+		try {
+			if(fileFileName!=null){
+				String path1 = UpFile.uploadFile(file);    //  /upImgs/xxx.img
+				String path = "C:/myeclipseworkplace/hanma1/WebRoot"+path1;  
+				File newFile = new File(path);
+				FileUtils.copyFile(file, newFile);
+				requset.setAttribute("path", path);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		directory.setStatus(1);
+		directoryService.add(directory);
+		return "add";
+	}
 	
 	public Directory getDirectory() {
 		return directory;

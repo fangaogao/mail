@@ -217,8 +217,10 @@
 		</div>
 		<!--rdPro/-->
 		<div class="hengfu">
-			<img src="${ctx}/jsp/images/hengfu1.jpg" width="979" height="97" />
+		    <img src="${ctx}/upImgs/face_4d974bb8a407.jpg" width="979" height="97"/>	
+		    <img src="${ctx}/upImgs/face_60d5cde2f409.jpg" width="979" height="97"/>	
 		</div>
+			<%-- <a href="${ctx}/jsp/images/ban1.jpg"><img src="${ctx}/jsp/images/hengfu1.jpg" width="979" height="97" /></a> --%>
 		<!--hengfu/-->
 		<div class="floor" id="floor1">
 			<h3 class="floorTitle">
@@ -254,8 +256,8 @@
 						</dl>
 						<dl>
 							<dt>
-								<a href="jsp/proinfo.html"><img src="${ctx}/jsp/images/rdPro5.jpg"
-									width="132" height="129" /></a>
+								 <a href="jsp/proinfo.html"><img src="${ctx}/jsp/images/rdPro5.jpg"
+								 	width="132" height="129" /></a> 
 							</dt>
 							<dd>妙洁 一次性纸杯 8盎司228ml 100只/袋 20袋/箱</dd>
 							<dd class="cheng">￥19.80/袋</dd>

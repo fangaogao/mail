@@ -79,6 +79,8 @@
 		
 		<action name="directory_*" class="com.hysd.action.admin.DirectoryAction" method="{1}">
 			<result name="list">/admin/directory_list.jsp</result>
+			<result name="addPre">/admin/directory_add.jsp</result>
+			<result name="add" type="redirectAction">/directory_list.do</result>
 		</action>
 		
 	</package>

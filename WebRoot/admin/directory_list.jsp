@@ -18,7 +18,7 @@
 				<div class="padding border-bottom">
 					<ul class="search" style="padding-left:10px;">
 						<li>
-							<a class="button border-main icon-plus-square-o" href="merchant_addPre.do">添加内容</a>
+							<a class="button border-main icon-plus-square-o" href="directory_addPre.do">添加内容</a>
 						</li>
 						<li>
 							<input type="text" placeholder="请输入目录名称" name="directory.cname" value="${directory.cname}" class="input" style="width:250px; line-height:17px;display:inline-block" />
